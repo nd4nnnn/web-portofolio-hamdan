@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Hamdan</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Particles.js CDN buat Efek Bintang/Galaksi -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #050515;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .glass {
+            background: rgba(15, 20, 35, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #3b82f6;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- BACKGROUND BINTANG GALAKSI BERGERAK -->
+    <div id="particles-js"></div>
+
+    <!-- 1. LOADING SCREEN -->
+    <div id="loader"
+        class="fixed inset-0 z-[100] bg-[#050510] flex flex-col justify-center items-center transition-opacity duration-700 px-4">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-center tracking-wide">
+            Welcome To My <br><span class="text-blue-500">Portofolio Website</span>
+        </h1>
+        <p class="text-gray-400 text-xs sm:text-sm tracking-widest mb-2">Loading <span id="load-text">0</span>%</p>
+        <div class="w-56 sm:w-64 h-1.5 bg-gray-800 rounded-full overflow-hidden">
+            <div id="load-bar" class="h-full bg-blue-500 w-0 transition-all duration-75"></div>
+        </div>
+    </div>
+
+    <!-- 2. NAVBAR FLOATING -->
+    <nav class="fixed top-4 sm:top-6 left-1/2 transform -translate-x-1/2 z-50 w-[95%] sm:w-[90%] md:w-auto">
+        <div
+            class="glass px-4 sm:px-8 py-2.5 sm:py-3 rounded-full flex justify-center gap-4 sm:gap-8 md:gap-10 text-xs sm:text-sm font-semibold text-gray-300">
+            <a href="#home" class="hover:text-white transition">Home</a>
+            <a href="#about" class="hover:text-white transition">About</a>
+            <a href="#portfolio" class="hover:text-white transition">Portfolio</a>
+            <a href="#contact" class="hover:text-white transition">Contact</a>
+        </div>
+    </nav>
+
+    <!-- 3. KONTEN UTAMA -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 pt-24 sm:pt-32 pb-16 sm:pb-20">
+
+        <!-- HERO SECTION -->
+        <section id="home" class="min-h-[85vh] sm:min-h-[80vh] flex flex-col justify-center py-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold leading-tight mb-4 text-white">
+                        Turning Ideas <br> <span class="text-blue-500">Into Reality</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-gray-300 font-semibold mb-2">Web Junior Developer</p>
+                    <p class="text-xs sm:text-sm text-gray-400 mb-6 sm:mb-8 max-w-md mx-auto md:mx-0 leading-relaxed">
+                        Dimulai dari rasa penasaran, berkembang menjadi passion. Aku membangun pengalaman digital yang
+                        tidak hanya bagus, tapi juga terasa bermakna.
+                    </p>
+                    <div class="flex justify-center md:justify-start gap-3 sm:gap-4">
+                        <a href="#portfolio"
+                            class="bg-blue-600 hover:bg-blue-500 text-white px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-semibold transition shadow-lg shadow-blue-600/30">Project</a>
+                        <a href="#contact"
+                            class="glass px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-semibold hover:bg-white/10 transition">Contact
+                            Me</a>
+                    </div>
+                </div>
+
+                <div class="glass p-5 sm:p-6 rounded-2xl w-full max-w-md mx-auto md:ml-auto">
+                    <h3
+                        class="text-xs sm:text-sm font-bold text-gray-300 mb-3 sm:mb-4 flex items-center justify-center md:justify-start gap-2">
+                        <span>🎵</span> Daily Rotation
+                    </h3>
+                    <p class="text-xs text-gray-400 mb-4 text-center md:text-left">A curated collection of tracks that
+                        keep me in the zone.</p>
+                    <iframe style="border-radius:12px"
+                        src="https://open.spotify.com/embed/track/4cOdK2wGChB1R9P2L0A391?utm_source=generator&theme=0"
+                        width="100%" height="152" frameBorder="0" allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="py-16 sm:py-24 md:py-32">
+            <!-- Part 1: Profil Utama (Nama, Foto, Deskripsi) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8 items-center max-w-6xl mx-auto relative mb-16">
+
+                <!-- 1. Nama & Resume Button -->
+                <div class="text-center md:text-left z-10 md:pr-4 order-1">
+                    <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-1 text-blue-500">Hi, I'm</h3>
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">Hamdan
+                    </h2>
+                    <a href="#"
+                        class="inline-block bg-blue-600 px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg text-xs sm:text-sm font-semibold hover:bg-blue-500 transition shadow-[0_0_15px_rgba(37,99,235,0.5)] text-white">
+                        📄 View Resume
+                    </a>
+                </div>
+
+                <!-- 2. Foto Hover Animation -->
+                <div class="flex justify-center relative group z-10 cursor-pointer order-2 my-4 md:my-0">
+                    <div class="relative w-52 h-64 sm:w-64 sm:h-80 md:w-72 md:h-96">
+                        <img src="profile-normal.png" alt="Foto Asli"
+                            class="absolute inset-0 w-full h-full object-contain transition-all duration-700 ease-in-out opacity-100 group-hover:opacity-0 drop-shadow-[0_10px_20px_rgba(255,255,255,0.1)]">
+
+                        <img src="profile-hover.png" alt="Foto Keren"
+                            class="absolute inset-0 w-full h-full object-contain transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100 drop-shadow-[0_0_25px_rgba(255,0,0,0.6)]">
+                    </div>
+
+                    <div
+                        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-36 h-36 sm:w-48 sm:h-48 bg-red-500/40 blur-[50px] sm:blur-[60px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10 pointer-events-none">
+                    </div>
+                </div>
+
+                <!-- 3. Quote Deskripsi & View Projects -->
+                <div class="text-center md:text-left z-10 md:pl-4 order-3">
+                    <p
+                        class="text-xs sm:text-sm md:text-base text-gray-300 leading-relaxed mb-6 sm:mb-8 max-w-sm mx-auto md:mx-0">
+                        Siswa Rekayasa Perangkat Lunak (RPL) di SMKN 1 Kawali yang berfokus pada Web & Backend
+                        Development.
+                        Terbiasa membangun sistem efisien dan API yang andal menggunakan Laravel PHP, Python Flask,
+                        serta integrasi basis data MySQL dan tampilan interaktif Tailwind CSS & JavaScript.
+                    </p>
+                    <a href="#portfolio"
+                        class="inline-block border border-gray-600 px-5 sm:px-6 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-semibold hover:bg-white/10 transition text-gray-300">
+                        &lt;&gt; View Projects
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Part 2: Riwayat Pendidikan (Education Timeline) -->
+            <div class="max-w-4xl mx-auto pt-6">
+                <h3
+                    class="text-2xl sm:text-3xl font-bold text-center mb-10 text-white flex items-center justify-center gap-2">
+                    <span>🎓</span> Riwayat Pendidikan
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                    <!-- SD -->
+                    <div
+                        class="glass p-6 rounded-2xl border-l-4 border-l-blue-500 hover:-translate-y-1 transition duration-300">
+                        <span
+                            class="text-xs font-semibold text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">2015
+                            - 2021</span>
+                        <h4 class="font-bold text-base text-white mt-4">SDN 1 Dayeuhluhur</h4>
+                        <p class="text-xs text-gray-400 mt-1">Pendidikan Sekolah Dasar</p>
+                    </div>
+
+                    <!-- MTs -->
+                    <div
+                        class="glass p-6 rounded-2xl border-l-4 border-l-blue-500 hover:-translate-y-1 transition duration-300">
+                        <span
+                            class="text-xs font-semibold text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">2021
+                            - 2024</span>
+                        <h4 class="font-bold text-base text-white mt-4">MTs Sabilurosyad</h4>
+                        <p class="text-xs text-gray-400 mt-1">Pendidikan Menengah Pertama</p>
+                    </div>
+
+                    <!-- SMK -->
+                    <div
+                        class="glass p-6 rounded-2xl border-l-4 border-l-blue-500 hover:-translate-y-1 transition duration-300">
+                        <span
+                            class="text-xs font-semibold text-blue-400 bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20">2024
+                            - 2026</span>
+                        <h4 class="font-bold text-base text-white mt-4">SMKN 1 Kawali</h4>
+                        <p class="text-xs text-gray-400 mt-1">Pendidikan Kejuruan (RPL / IT)</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO TABS SECTION -->
+        <section id="portfolio" class="py-12 sm:py-20">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-10">Portofolio</h2>
+
+            <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8 sm:mb-10">
+                <button onclick="bukaTab('projects')"
+                    class="tab-btn bg-blue-600 px-5 sm:px-6 py-2 rounded-full font-semibold text-xs sm:text-sm transition shadow-lg shadow-blue-500/20">Projects</button>
+                <button onclick="bukaTab('techstack')"
+                    class="tab-btn glass px-5 sm:px-6 py-2 rounded-full font-semibold text-xs sm:text-sm transition">Tech
+                    Stack</button>
+            </div>
+
+            <!-- Tab Project -->
+            <div id="projects" class="tab-content grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6">
+
+                <!-- Proyek 1: Bank Mini / RujukCepat -->
+                <div class="glass p-5 rounded-2xl hover:-translate-y-2 transition duration-300">
+                    <div class="w-full aspect-video rounded-xl mb-4 overflow-hidden bg-blue-900/30">
+                        <img src="project_bankmini.png" alt="BankMini Website"
+                            class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    </div>
+                    <h4 class="font-bold text-base sm:text-lg">Bank Mini Website</h4>
+                    <p class="text-xs text-gray-400 mt-2">Sistem pencatatan transaksi & kelola buku tabungan.</p>
+                </div>
+
+                <!-- Proyek 2: Undangan Digital -->
+                <div class="glass p-5 rounded-2xl hover:-translate-y-2 transition duration-300">
+                    <div class="w-full aspect-video rounded-xl mb-4 overflow-hidden bg-blue-900/30">
+                        <img src="project_undangan.png" alt="Website Undangan"
+                            class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    </div>
+                    <h4 class="font-bold text-base sm:text-lg">Undangan Digital</h4>
+                    <p class="text-xs text-gray-400 mt-2">Platform undangan web interaktif & custom desain.</p>
+                </div>
+
+                <!-- Proyek 3: Company -->
+                <div class="glass p-5 rounded-2xl hover:-translate-y-2 transition duration-300">
+                    <div class="w-full aspect-video rounded-xl mb-4 overflow-hidden bg-blue-900/30">
+                        <img src="project_company.png" alt="Website Perusahaan"
+                            class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                    </div>
+                    <h4 class="font-bold text-base sm:text-lg">Website Perusahaan</h4>
+                    <p class="text-xs text-gray-400 mt-2">Desain dan pengembangan website untuk perusahaan dengan fokus
+                        pada user experience dan branding.</p>
+                </div>
+
+                <!-- Kalau mau nambah proyek ke-3, tinggal copas kartu <div class="glass ..."> di sini -->
+
+            </div>
+
+            <!-- Tab Tech Stack -->
+            <div id="techstack"
+                class="tab-content hidden grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 sm:gap-4 text-center">
+                <div class="glass p-3.5 sm:p-4 rounded-xl font-bold text-xs sm:text-base text-orange-500">HTML</div>
+                <div class="glass p-3.5 sm:p-4 rounded-xl font-bold text-xs sm:text-base text-blue-500">PHP</div>
+                <div class="glass p-3.5 sm:p-4 rounded-xl font-bold text-xs sm:text-base text-yellow-400">JavaScript
+                </div>
+                <div class="glass p-3.5 sm:p-4 rounded-xl font-bold text-xs sm:text-base text-teal-400">Tailwind</div>
+                <div class="glass p-3.5 sm:p-4 rounded-xl font-bold text-xs sm:text-base text-blue-300">Python</div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="py-16 sm:py-24 relative">
+            <div class="text-center mb-8 sm:mb-12">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-3">Get In <span class="text-blue-500">Touch</span></h2>
+                <p class="text-gray-400 text-xs sm:text-sm max-w-md mx-auto px-2">
+                    Punya ide proyek, tawaran kolaborasi, atau sekadar ingin menyapa? Silakan kirim pesan atau hubungi
+                    kontak di bawah.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 sm:gap-8 max-w-5xl mx-auto">
+                <div class="lg:col-span-2 space-y-4 flex flex-col justify-between">
+                    <div class="glass p-5 sm:p-6 rounded-2xl">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600/20 rounded-xl flex items-center justify-center text-blue-400 text-lg sm:text-xl font-bold">
+                                📍</div>
+                            <div>
+                                <h4 class="text-[10px] sm:text-xs text-gray-400 font-semibold uppercase tracking-wider">
+                                    Lokasi</h4>
+                                <p class="text-xs sm:text-sm font-medium text-white">Ciamis, Jawa Barat, Indonesia</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600/20 rounded-xl flex items-center justify-center text-blue-400 text-lg sm:text-xl font-bold">
+                                ✉️</div>
+                            <div>
+                                <h4 class="text-[10px] sm:text-xs text-gray-400 font-semibold uppercase tracking-wider">
+                                    Email</h4>
+                                <p class="text-xs sm:text-sm font-medium text-white">nd4nnnn02@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600/20 rounded-xl flex items-center justify-center text-blue-400 text-lg sm:text-xl font-bold">
+                                💼</div>
+                            <div>
+                                <h4 class="text-[10px] sm:text-xs text-gray-400 font-semibold uppercase tracking-wider">
+                                    Status</h4>
+                                <p class="text-xs sm:text-sm font-medium text-green-400">Open for Opportunities</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass p-5 sm:p-6 rounded-2xl">
+                        <h4 class="text-xs sm:text-sm font-bold text-gray-300 mb-3 sm:mb-4">Connect with me</h4>
+                        <div class="flex gap-2 sm:gap-3">
+                            <a href="https://github.com" target="_blank"
+                                class="flex-1 glass py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-semibold text-center hover:bg-blue-600 hover:text-white transition duration-300">GitHub</a>
+                            <a href="https://linkedin.com" target="_blank"
+                                class="flex-1 glass py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-semibold text-center hover:bg-blue-600 hover:text-white transition duration-300">LinkedIn</a>
+                            <a href="https://www.instagram.com/nd4n___/" target="_blank"
+                                class="flex-1 glass py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-xs font-semibold text-center hover:bg-blue-600 hover:text-white transition duration-300">Instagram</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-3 glass p-5 sm:p-8 rounded-2xl">
+                    <form id="contact-form" class="space-y-4 sm:space-y-5">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1.5 sm:mb-2">Nama
+                                    Lengkap</label>
+                                <input type="text" name="nama" id="input-nama" placeholder="John Doe" required
+                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-300 mb-1.5 sm:mb-2">Email</label>
+                                <input type="email" name="email" id="input-email" placeholder="nama@email.com" required
+                                    class="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1.5 sm:mb-2">Subjek</label>
+                            <input type="text" name="subjek" id="input-subjek" placeholder="Diskusi Proyek / Penawaran"
+                                required
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-300 mb-1.5 sm:mb-2">Pesan</label>
+                            <textarea name="pesan" id="input-pesan" rows="4"
+                                placeholder="Tuliskan pesan kamu di sini..." required
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-3.5 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 transition resize-none"></textarea>
+                        </div>
+
+                        <button type="submit"
+                            class="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 sm:py-3.5 rounded-xl text-xs sm:text-sm transition shadow-lg shadow-blue-600/30 flex items-center justify-center gap-2">
+                            <span>Kirim Pesan</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- MODAL POP-UP BERHASIL TERKIRIM -->
+            <div id="success-modal"
+                class="fixed inset-0 z-[150] bg-black/60 backdrop-blur-md flex items-center justify-center hidden transition-all duration-300 px-4">
+                <div class="glass p-6 sm:p-8 rounded-2xl max-w-sm w-full text-center border border-blue-500/30 shadow-[0_0_30px_rgba(59,130,246,0.3)] transform scale-95 transition-all duration-300"
+                    id="modal-card">
+                    <div
+                        class="w-12 h-12 sm:w-16 sm:h-16 bg-blue-500/20 text-blue-400 rounded-full flex items-center justify-center text-2xl sm:text-3xl mx-auto mb-4 border border-blue-500/40">
+                        ✓
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-white mb-2">Pesan Terkirim!</h3>
+                    <p class="text-xs text-gray-300 mb-6 leading-relaxed">
+                        Terima kasih sudah menghubungi bray! Pesan kamu sudah berhasil terkirim dan akan segera saya
+                        tanggapi.
+                    </p>
+                    <button onclick="tutupModal()"
+                        class="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2.5 rounded-xl text-xs sm:text-sm transition shadow-md shadow-blue-600/30">
+                        Mantap, Tutup
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SCRIPT LOGIKA -->
+    <script>
+        // PARTICLES.JS
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 120, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#ffffff" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": true },
+                "size": { "value": 3, "random": true },
+                "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "out_mode": "out" }
+            }
+        });
+
+        // LOADING SCREEN & RESET SCROLL TO TOP
+        document.addEventListener("DOMContentLoaded", () => {
+            // Force scroll ke paling atas (#home) saat refresh
+            if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+            }
+            window.scrollTo(0, 0);
+
+            let loaderDiv = document.getElementById('loader');
+
+            // Jika user sudah pernah melihat loading screen di sesi ini
+            if (sessionStorage.getItem('alreadyLoaded')) {
+                loaderDiv.style.display = 'none';
+            } else {
+                // Jika baru pertama kali buka web
+                let loadText = document.getElementById('load-text');
+                let loadBar = document.getElementById('load-bar');
+                let percent = 0;
+
+                let interval = setInterval(() => {
+                    percent += 2;
+                    loadText.innerText = percent;
+                    loadBar.style.width = percent + '%';
+
+                    if (percent >= 100) {
+                        clearInterval(interval);
+                        setTimeout(() => {
+                            loaderDiv.style.opacity = '0';
+                            setTimeout(() => loaderDiv.style.display = 'none', 700);
+                            // Simpan status bahwa loading sudah selesai
+                            sessionStorage.setItem('alreadyLoaded', 'true');
+                        }, 300);
+                    }
+                }, 30);
+            }
+        });
+
+        // TAB MENU
+        function bukaTab(tabId) {
+            let contents = document.querySelectorAll('.tab-content');
+            contents.forEach(el => el.classList.add('hidden'));
+
+            document.getElementById(tabId).classList.remove('hidden');
+
+            let btns = document.querySelectorAll('.tab-btn');
+            btns.forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'shadow-lg', 'shadow-blue-500/20');
+                btn.classList.add('glass');
+            });
+
+            // Menyesuaikan tombol aktif
+            let activeBtn = window.event ? window.event.currentTarget : event.currentTarget;
+            if (activeBtn) {
+                activeBtn.classList.remove('glass');
+                activeBtn.classList.add('bg-blue-600', 'shadow-lg', 'shadow-blue-500/20');
+            }
+        }
+
+        // CONTACT FORM LOGIC (STATIC HTML)
+        const contactForm = document.getElementById('contact-form');
+        const successModal = document.getElementById('success-modal');
+        const modalCard = document.getElementById('modal-card');
+
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            successModal.classList.remove('hidden');
+            setTimeout(() => {
+                modalCard.classList.remove('scale-95');
+                modalCard.classList.add('scale-100');
+            }, 10);
+
+            contactForm.reset();
+        });
+
+        function tutupModal() {
+            modalCard.classList.remove('scale-100');
+            modalCard.classList.add('scale-95');
+            setTimeout(() => {
+                successModal.classList.add('hidden');
+            }, 150);
+        }
+    </script>
+</body>
+
+</html>
